@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="app">
+      ${ message }
+    </div>
+
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+
+
+    <div id="app-3">
+      <p v-if="seen">Now you see me</p>
+    </div>
+
+    <div id="app-4">
+      <ol>  
+        <li v-for="todo in todos">
+          {v todo.text v}
+        </li>
+      </ol>
+    </div>  
+
+
+    <div id="app-5">
+      <p>{V message V}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+
+    <div id="app-6">
+      <p>{# message #}</p>
+      <input v-model="message">
+    </div>
+
+    <div id="extend">
+      <p>{custom message custom}</p>
+    </div>
+
+
+  </body>
+
+  <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</html>
