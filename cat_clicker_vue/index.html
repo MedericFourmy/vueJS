@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue catclicker premium pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div id="vm-cat">
+		<select>
+			<option v-for="cat in cats" @click="currentCat = cat">{{ cat.name }}</option>
+		</select>
+
+		<div>
+			<h2>{{ currentCat.name }}</h2>
+			<label>{{ currentCat.clickCount }}</label>
+			<br>
+			<img v-bind:src="currentCat.imgSrc" width="600" v-on:click="currentCat.clickCount += 1">
+		</div>	
+
+
+		<div>
+			<h2>Admin</h2>
+			<button v-if="!isAdmin" @click="isAdmin = !isAdmin">Admin</button>
+			<form v-if="isAdmin">
+				<p>
+					<label >Name: </label>
+					<textarea v-model="currentCat.name"></textarea>
+				</p>
+				<p>
+					<label>Click count:  </label>
+					<textarea v-model="currentCat.clickCount"></textarea>
+				</p>
+				<p>
+					<label>Attribution: </label>
+					<textarea v-model="currentCat.imgAttribution"></textarea>
+				</p>
+			</form>
+			<button v-if="isAdmin" @click="isAdmin = !isAdmin">Cancel</button>
+		</div>
+	</div>
+
+
+
+
+  	<script type="text/javascript" src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    <!-- // <script src="js/mov_cc.js"></script> -->
+    <script src="js/mov_cc_vue.js"></script>
+</body>
+</html>
