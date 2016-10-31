@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+    <div id="app1">
+        <li v-for="item in items">
+          {{ item.message }}
+        </li>
+    </div>
+
+    <ul id="example-2">
+      <li v-for="(item, index) in items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+
+      <div>
+        <span v-for="n in 10">{{ n }}</span>
+      </div>
+      </li>
+    </ul>
+
+
+
+
+  </body>
+
+  <script type="text/javascript" src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</html>
