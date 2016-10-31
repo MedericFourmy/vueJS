@@ -20,13 +20,7 @@
                     <th class="missed-col">Missed days</th>
                 </thead>
                 <tbody>
-                    <tr class="student" v-for="student in students">
-                        <td>{{ student.name }}</td>
-                        <td v-for="day in student.daysMissed">
-                            <input type="checkbox" v-model.clicked="day.missed">
-                        </td>
-                        <td v-bind:student="student" is="tdnb"></td>
-                    </tr>
+                    <tr class="student" :student="student" v-for="student in students" is="tr-student"></tr>
                 </tbody>
             </table>
         </div>

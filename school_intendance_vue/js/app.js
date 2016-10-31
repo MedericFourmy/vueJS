@@ -1,6 +1,12 @@
-let TdNb = Vue.extend({
+let TrStudent = Vue.extend({
     props: ['student'],
-    template: '<td>{{nbDaysMissed}}</td>',
+    template: '<tr class="student">\
+                    <td>Toto</td>\
+                    <td v-for="day in student.daysMissed">\
+                        <input type="checkbox" v-model.clicked="day.missed">\
+                    </td>\
+                    <td>{{nbDaysMissed}}</td>\
+                </tr>',
     computed: {
         nbDaysMissed: function(){
             let nb = 0;
@@ -8,10 +14,10 @@ let TdNb = Vue.extend({
                 if (day.missed)
                     nb += 1;
             }
-            return 10 - nb;
+            return this.student.daysMissed.length - nb;
         }
     }
-});
+})
 
 let vm = new Vue({
     el: '#vm-table',
@@ -79,6 +85,7 @@ let vm = new Vue({
     // },
 
     components: {
-        'tdnb': TdNb
+        'tdnb': TdNb,
+        'tr-student': TrStudent
     }
 })
