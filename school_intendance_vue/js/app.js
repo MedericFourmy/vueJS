@@ -73,19 +73,7 @@ let vm = new Vue({
         ]
     },
 
-    // methods: {
-    //     nbDaysMissedCalc: function(daysMissed){
-    //         let nb = 0;
-    //         for (day in daysMissed){
-    //             if (day.missed)
-    //                 nb += 1;
-    //         }
-    //         return nb;
-    //     }
-    // },
-
     components: {
-        'tdnb': TdNb,
         'tr-student': TrStudent
     }
 })
