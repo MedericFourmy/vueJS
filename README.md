@@ -1,2 +1,2 @@
 # vueJS
-*Udacity MVC course examples written in VueJS
+*Udacity MVC course examples written in VueJS*
